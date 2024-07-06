@@ -1,0 +1,16 @@
+{{> header}}
+
+<h1>Carrito</h1>
+<ul>
+  {{#each cart.products}}
+  <li>
+    <h2>{{this.productId.name}}</h2>
+    <p>Precio: {{this.productId.price}}</p>
+    <p>Categoría: {{this.productId.category}}</p>
+    <p>Cantidad: {{this.quantity}}</p>
+    <button>Quitar</button>
+  </li>
+  {{/each}}
+</ul>
+
+{{> footer}}

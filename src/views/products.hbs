@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
+</head>
+<body>
+  <h1>Productos</h1>
+  <p>Bienvenido, {{username}} ({{role}})</p>
+  <ul>
+    {{#each productos}}
+    <li>
+      <h2>{{this.title}}</h2> 
+      <p>Precio: {{this.price}}</p> 
+      <p>Stock: {{this.stock}}</p>
+      <button>Agregar al carrito</button>
+    </li>
+    {{/each}}
+  </ul>
+
+  <div>
+    {{#if hasPrevPage}}
+      <a href="{{prevLink}}">Anterior</a>
+    {{/if}}
+    {{#if hasNextPage}}
+      <a href="{{nextLink}}">Siguiente</a>
+    {{/if}}
+  </div>
+
+  <form action="/logout" method="post">
+    <button type="submit">Cerrar sesión</button>
+  </form>
+</body>
+</html>
